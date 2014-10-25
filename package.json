@@ -1,0 +1,33 @@
+{
+  "name": "node-yajl",
+  "version": "0.0.1",
+  "description": "Node.js bindings for YAJL - JSON streaming parsing and generation",
+  "main": "index.js",
+  "dependencies": {
+    "nan": "^1.3.0"
+  },
+  "devDependencies": {
+    "mocha": "*"
+  },
+  "scripts": {
+    "test": "mocha --reporter spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wmalinowski/node-yajl.git"
+  },
+  "keywords": [
+    "node",
+    "yajl",
+    "json",
+    "streaming",
+    "parsing",
+    "generation"
+  ],
+  "author": "Wojciech Malinowski",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wmalinowski/node-yajl/issues"
+  },
+  "homepage": "https://github.com/wmalinowski/node-yajl"
+}
