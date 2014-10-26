@@ -1,1 +1,1 @@
-var yail = require('../');
+module.exports = require('./lib/yajl');

@@ -1,6 +1,6 @@
 {
   "name": "node-yajl",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Node.js bindings for YAJL - JSON streaming parsing and generation",
   "main": "index.js",
   "dependencies": {
@@ -10,6 +10,7 @@
     "mocha": "*"
   },
   "scripts": {
+    "preinstall": "node-gyp rebuild",
     "test": "mocha --reporter spec"
   },
   "repository": {
