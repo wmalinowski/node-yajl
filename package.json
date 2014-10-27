@@ -4,13 +4,14 @@
   "description": "Node.js bindings for YAJL - JSON streaming parsing and generation",
   "main": "index.js",
   "dependencies": {
+    "bindings": "*",
     "nan": "*"
   },
   "devDependencies": {
     "mocha": "*"
   },
+  "gypfile": true,
   "scripts": {
-    "preinstall": "node-gyp rebuild",
     "test": "mocha --reporter spec"
   },
   "repository": {
