@@ -1,15 +1,21 @@
+#include <node.h>
 #include <nan.h>
 #include <yajl/yajl_version.h>
 
-using namespace v8;
+using v8::FunctionTemplate;
+using v8::Handle;
+using v8::Object;
+using v8::String;
+using v8::Number;
 
-NAN_METHOD(Method) {
+NAN_METHOD(getYajlVersion) {
   NanScope();
-  NanReturnValue(NanNew(YAJL_VERSION));
+  NanReturnValue(NanNew<Number>(YAJL_VERSION));
 }
 
-void Init(Handle<Object> exports) {
-  exports->Set(NanNew("getYajlVersion"), NanNew<FunctionTemplate>(Method)->GetFunction());
+void InitAll(Handle<Object> exports) {
+  exports->Set(NanNew<String>("getYajlVersion"),
+               NanNew<FunctionTemplate>(getYajlVersion)->GetFunction());
 }
 
-NODE_MODULE(getYajlVersion, Init)
+NODE_MODULE(yajl, InitAll)
