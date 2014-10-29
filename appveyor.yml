@@ -8,6 +8,7 @@ install:
   - SET PATH=c:\python27;%PATH%
   - SET PATH=C:\Program Files (x86)\MSBuild\12.0\bin\;%PATH%
   - SET PATH=%APPDATA%\npm;%PATH%
+  - git submodule update --init
   - npm install
 
 test_script:
