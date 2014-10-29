@@ -5,11 +5,13 @@ environment:
     - nodejs_version: 0.11
 
 install:
+  - node --version
+  - npm --version
   - SET PATH=c:\python27;%PATH%
   - SET PATH=C:\Program Files (x86)\MSBuild\12.0\bin\;%PATH%
   - SET PATH=%APPDATA%\npm;%PATH%
   - git submodule update --init
-  - npm install
+  - npm install --build-from-source --msvs_version=2012
 
 test_script:
   - node --version
