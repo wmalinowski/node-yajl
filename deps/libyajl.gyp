@@ -1,4 +1,50 @@
 {
+  'configurations': {
+    'Debug': {
+      'defines': [ 'DEBUG', '_DEBUG' ]
+    },
+    'Release': {
+      'defines': [ 'NDEBUG' ]
+    }
+  },
+  'conditions': [
+    ['OS == "win"', {
+      'defines': [
+        'WIN32'
+      ],
+      'cflags':[
+        '/wd4996',
+        '/wd4255',
+        '/wd4130',
+        '/wd4100',
+        '/wd4711',
+        '/O2'
+      ]
+    }],
+    ['OS != "win"', {
+      'cflags':[
+        '-Wall',
+        '-fvisibility=hidden',
+        '-std=c99',
+        '-pedantic',
+        '-Wpointer-arith',
+        '-Wno-format-y2k',
+        '-Wstrict-prototypes',
+        '-Wmissing-declarations',
+        '-Wnested-externs',
+        '-Wextra',
+        '-Wundef',
+        '-Wwrite-strings',
+        '-Wold-style-definition',
+        '-Wredundant-decls',
+        '-Wno-unused-parameter',
+        '-Wno-sign-compare',
+        '-Wmissing-prototypes',
+        '-O2',
+        '-Wuninitialized'
+      ],
+    }]
+  ],
   'targets': [
     {
       'target_name': 'copy_includes',
@@ -49,23 +95,6 @@
         'yajl/src/yajl_alloc.c',
         'yajl/src/yajl_tree.c',
         'yajl/src/yajl_version.c'
-      ],
-      'cflags':[
-        '-std=c99',
-        '-pedantic',
-        '-Wpointer-arith',
-        '-Wno-format-y2k',
-        '-Wstrict-prototypes',
-        '-Wmissing-declarations',
-        '-Wnested-externs',
-        '-Wextra',
-        '-Wundef',
-        '-Wwrite-strings',
-        '-Wold-style-definition',
-        '-Wredundant-decls',
-        '-Wno-unused-parameter',
-        '-Wno-sign-compare',
-        '-Wmissing-prototypes'
       ],
       'include_dirs': [
         '<(SHARED_INTERMEDIATE_DIR)/includes/'
